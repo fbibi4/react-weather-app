@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-export default function WeatherSearch() {
+export default function App() {
   const [city, setCity] = useState("");
   const [loader, setLoader] = useState(false);
   const [weather, setWeather] = useState({});
@@ -13,7 +13,7 @@ export default function WeatherSearch() {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      description: response.data.weather[0].description
+      description: response.data.weather[0].description,
     });
   }
   function handleSubmit(event) {
@@ -51,28 +51,4 @@ export default function WeatherSearch() {
   } else {
     return form;
   }
-}
-
-export default function App() {
-  return (
-    <div className="Navigation">
-      <header>
-        <ul className="navigation-items">
-          <li className="navigation-item">Lisbon</li>
-          <li className="navigation-item">Paris</li>
-          <li className="navigation-item">Sydney</li>
-          <li className="navigation-item">San Francisco</li>
-        </ul>
-      </header>
-    </div>
-  );
-}
-export default function App() {
-  return (
-    <form>
-      <input type="search" placeholder="Enter a City....." />
-      <button type="Submit">Search</button>
-      <button type="Submit">Current</button>
-    </form>
-  );
 }
