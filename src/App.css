@@ -1,10 +1,12 @@
-.navigation-items {
-  list-style: none;
-  margin: 0;
-  padding: 0 0 20px;
+.App {
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
 }
-
-.navigation-item {
-  display: inline;
-  margin: 0 20px 0 0;
+.App footer {
+  font-size: 13px;
+  color: #212121;
+}
+.App a {
+  text-decoration: none;
 }

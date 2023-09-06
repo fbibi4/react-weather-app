@@ -1,7 +1,7 @@
-import React, { useState } from "react";
++import React from "react";
 import axios from "axios";
 
-export default function App() {
++export default function WeatherSearch() {
   const [city, setCity] = useState("");
   const [loader, setLoader] = useState(false);
   const [weather, setWeather] = useState({});
@@ -13,7 +13,7 @@ export default function App() {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      description: response.data.weather[0].description,
+      description: response.data.weather[0].description
     });
   }
   function handleSubmit(event) {
@@ -25,19 +25,11 @@ export default function App() {
   function changeCity(event) {
     setCity(event.target.value);
   }
-  let cities = (
-    <ul className="navigation-items">
-      <li className="navigation-item">Lisbon</li>
-      <li className="navigation-item">Paris</li>
-      <li className="navigation-item">Sydney</li>
-      <li className="navigation-item">San Francisco</li>
-    </ul>
-  );
+
   let form = (
     <form onSubmit={handleSubmit}>
       <input type="search" placeholder="Type in a city" onChange={changeCity} />
       <input type="submit" value="Search" />
-      <button type="Submit">Current</button>
     </form>
   );
 
@@ -59,4 +51,13 @@ export default function App() {
   } else {
     return form;
   }
+}
+function App() {
+  return (
+    <form>
+      <input type="search" placeholder="Enter a City....." />
+      <button type="Submit">Search</button>
+      <button type="Submit">Current</button>
+    </form>
+  );
 }
