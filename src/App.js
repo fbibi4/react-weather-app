@@ -25,11 +25,19 @@ export default function App() {
   function changeCity(event) {
     setCity(event.target.value);
   }
-
+  let cities = (
+    <ul className="navigation-items">
+      <li className="navigation-item">Lisbon</li>
+      <li className="navigation-item">Paris</li>
+      <li className="navigation-item">Sydney</li>
+      <li className="navigation-item">San Francisco</li>
+    </ul>
+  );
   let form = (
     <form onSubmit={handleSubmit}>
       <input type="search" placeholder="Type in a city" onChange={changeCity} />
       <input type="submit" value="Search" />
+      <button type="Submit">Current</button>
     </form>
   );
 
