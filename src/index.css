@@ -8,16 +8,10 @@ body {
   border-radius: 3px solid black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .navigation-items {
-  list-style: none;
   margin-top: 20px;
   padding: 0 0 20px;
-  text-align: center;
+  margin-left: 20px;
 }
 
 .navigation-item {
@@ -25,6 +19,23 @@ code {
   margin: 0 20px 0 0;
 }
 
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0 auto;
+}
 a {
   text-decoration: none;
+}
+
+input {
+  font-size: large;
+  font-family: -apple-system, BlinkMacSystemFont;
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  height: 44px;
+  outline: 0;
+  padding: 10px;
+  margin-left: 3px;
 }
