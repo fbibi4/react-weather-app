@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
 import "./index";
-import WeatherSearch from "./WeatherSearch";
+import "./WeatherSearch.js";
 export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <footer className="footer" mt-8>
+        <footer className="footer">
           This website was coded by{" "}
           <a
             href="https://www.linkedin.com/in/farha-bibi-b2a52125b//"
