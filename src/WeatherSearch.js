@@ -9,7 +9,7 @@ export default function WeatherSearch() {
 
   function displayWeather(response) {
     setLoader(true);
-    setCityName(response.data.name); // Set the city name
+    setCityName(response.data.name);
     setWeather({
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,

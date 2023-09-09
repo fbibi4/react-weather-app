@@ -3,7 +3,7 @@ import "./App.css";
 import "./index";
 export default function App() {
   return (
-    <div className="App">
+    <div className="App-Footer">
       <div className="container">
         <footer className="footer">
           This website was coded by{" "}
@@ -22,7 +22,7 @@ export default function App() {
             rel="noreferrer"
             title="Source code on GitHub"
           >
-            <strong>open-sourced</strong>
+            <strong>open-sourced.</strong>
           </a>
         </footer>
       </div>

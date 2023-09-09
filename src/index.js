@@ -8,9 +8,13 @@ import WeatherSearch from "./WeatherSearch";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Navigation />
-    <WeatherSearch />
-    <App />
+    <div className="container">
+      <div className="App">
+        <Navigation />
+        <WeatherSearch />
+        <App />
+      </div>
+    </div>
   </React.StrictMode>
 );
 
