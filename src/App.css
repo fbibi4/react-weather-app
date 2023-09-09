@@ -1,9 +1,8 @@
-.App {
-  max-width: 600px;
-  display: block;
-  border-radius: 12px solid black;
+.container {
+  max-width: 1080px;
+  margin: 20px auto;
+  border-radius: 10px solid black;
 }
-
 footer {
   font-size: 16px;
   color: #212121;
