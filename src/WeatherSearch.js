@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function WeatherSearch() {
@@ -6,6 +6,17 @@ export default function WeatherSearch() {
   const [loader, setLoader] = useState(false);
   const [weather, setWeather] = useState({});
   const [cityName, setCityName] = useState("");
+
+  useEffect(() => {
+    const apiKey = "f8e14a21ac2a08b12d64743366f61697";
+    navigator.geolocation.getCurrentPosition((position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+      axios.get(apiUrl).then(displayWeather);
+    });
+  }, []);
 
   function displayWeather(response) {
     setLoader(true);
@@ -18,12 +29,14 @@ export default function WeatherSearch() {
       description: response.data.weather[0].description,
     });
   }
+
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "f8e14a21ac2a08b12d64743366f61697";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiKey = "f8e14a21ac2a08b12d64743366f61697";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
+
   function changeCity(event) {
     setCity(event.target.value);
   }
@@ -32,8 +45,8 @@ export default function WeatherSearch() {
     navigator.geolocation.getCurrentPosition((position) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      let apiKey = "f8e14a21ac2a08b12d64743366f61697";
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+      const apiKey = "f8e14a21ac2a08b12d64743366f61697";
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
       axios.get(apiUrl).then(displayWeather);
     });
   }
