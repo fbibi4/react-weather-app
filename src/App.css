@@ -49,3 +49,18 @@ form {
 .footer a:hover {
   text-decoration: underline;
 }
+.forecast {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.forecast-item {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+}
