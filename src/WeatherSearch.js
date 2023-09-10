@@ -125,7 +125,6 @@ export default function WeatherSearch() {
             <img src={weather.icon} alt={weather.description} />
           </li>
         </ul>
-        <h3>5-Day Forecast:</h3>
         <div className="forecast">
           {forecast.map((forecastItem, index) => (
             <div className="forecast-item" key={index}>
